@@ -26,7 +26,7 @@ public class VariablesTheme {
         double allPrice = penPrice + bookPrice;
         double discount = (allPrice / 100) * 11;
         double discountPrice = allPrice - discount;
-        System.out.println("Общяя стоимость товаров без скидки: " + allPrice + " рублей.");
+        System.out.println("Общая стоимость товаров без скидки: " + allPrice + " рублей.");
         System.out.println("Сумма скидки: " + discount + " рубля.");
         System.out.println("Общая стоимость товаров со скидкой: " + discountPrice + " рублей.");
 
