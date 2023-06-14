@@ -43,19 +43,23 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n3. Проверка числа.");
-        int num = 8;
+        int num = 0;
         if (num == 0) {
-            System.out.print("");
+            System.out.print("Исходное число - " + num + ".");
         } else if (num % 2 == 0) {
             System.out.println("Число " + num + " четное.");
-        } else if (num % 2 != 0) {
+        } else {
             System.out.println("Число " + num + " нечетное.");
         }
-        if (num > 0) {
+
+        if (num == 0) {
+            System.out.println("");
+        } else if (num > 0) {
             System.out.println("Число " + num + " положительное.");
-        } else if (num < 0) {
+        } else {
             System.out.println("Число " + num + " отрицательное.");
         }
+
 
         System.out.println("\n4. Поиск одинаковых цифр в числах.");
         int num3 = 753;
@@ -65,25 +69,22 @@ public class IfElseStatementTheme {
         int ones = num3 % 10;
         System.out.println("Исходные числа: " + num3 + " и " + num4);
 
-        if (hundreds == num4 / 100) {
-            System.out.println("Одинаковые числа: " + hundreds + " из разряда сотен.");
-        }
-        if (tens == num4 / 10 % 10) {
-            System.out.println("Одинаковые числа: " + tens + " из разряда десятков.");
-
-        }
-        if (ones == num4 % 10) {
-            System.out.println("Одинаковые числа: " + ones + " из разряда единиц.");
-        }
         if (hundreds != num4 / 100 & tens != num4 / 10 % 10 & ones != num4 % 10) {
             System.out.println("В цифрах одинаковых чисел нет.");
+        } else if (hundreds == num4 / 100) {
+            System.out.println("Одинаковые числа: " + hundreds + " из разряда сотен.");
+        } else if (tens == num4 / 10 % 10) {
+            System.out.println("Одинаковые числа: " + tens + " из разряда десятков.");
+        } else if (ones == num4 % 10) {
+            System.out.println("Одинаковые числа: " + ones + " из разряда единиц.");
         }
+
 
         System.out.println("\n5. Определение символа по его коду.");
         char code = '\u0057';
-        if (code >= 'A' & code <= 'Z' || code >= 'a' & code <= 'z') {
+        if (code >= 'A' && code <= 'Z' || code >= 'a' && code <= 'z') {
             System.out.println("Это буква " + code + ".");
-        } else if (code >= '0' & code <= '9') {
+        } else if (code >= '0' && code <= '9') {
             System.out.println("Это число " + code + ".");
         } else {
             System.out.println("Это не буква и не число. Это символ " + code + ".");
@@ -94,67 +95,55 @@ public class IfElseStatementTheme {
         double finalSum = 0;
 
         if (deposit < 100000) {
-            finalSum = deposit + deposit / 20;
-        }
-        if (deposit >= 100000 & deposit <= 300000) {
+            finalSum = deposit + deposit * 0.05;
+        } else if (deposit >= 100000 & deposit <= 300000) {
             finalSum = deposit + (deposit * 0.07);
-        }
-        if (deposit > 300000) {
-            finalSum = deposit + (deposit / 10);
+        } else {
+            finalSum = deposit + (deposit * 0.1);
         }
         System.out.println("Сумма вклада: " + deposit + " руб.");
         System.out.println("Начисленный за год процент: " + (finalSum - deposit) + " руб.");
         System.out.println("Итоговая сумма: " + finalSum + " руб.");
 
         System.out.println("\n7. Определение оценки по предметам.");
-        double historyAssessment = 59;
-        double programAssessment = 91;
-        double programAverage = 0;
+        double historyPercent = 59;
+        double programmingPercent = 91;
+        double programmingAverage = 0;
         double historyAverage = 0;
-        if (historyAssessment <= 60) {
-            historyAverage += 2;
+        if (historyPercent <= 60) {
+            historyAverage = 2;
             System.out.println("2 - История");
-        }
-        if (historyAssessment > 60 & historyAssessment <= 73) {
-            historyAverage += 3;
+        } else if (historyPercent > 60 & historyPercent <= 73) {
+            historyAverage = 3;
             System.out.println("3 - История");
-        }
-        if (historyAssessment > 73 & historyAssessment <= 91) {
-            historyAverage += 4;
+        } else if (historyPercent > 73 & historyPercent <= 91) {
+            historyAverage = 4;
             System.out.println("4 - История");
-        }
-        if (historyAssessment > 91) {
-            historyAverage += 5;
+        } else {
+            historyAverage = 5;
             System.out.println("5 - История");
         }
-        if (programAssessment <= 60) {
-            programAverage += 2;
+        if (programmingPercent <= 60) {
+            programmingAverage = 2;
             System.out.println("2 - Программирование");
-        }
-        if (programAssessment > 60 & programAssessment <= 73) {
-            programAverage += 3;
+        } else if (programmingPercent > 60 & programmingPercent <= 73) {
+            programmingAverage = 3;
             System.out.println("3 - Программирование");
-        }
-        if (programAssessment > 73 & programAssessment <= 91) {
-            programAverage += 4;
+        } else if (programmingPercent > 73 & programmingPercent <= 91) {
+            programmingAverage = 4;
             System.out.println("4 - Программирование");
-        }
-        if (programAssessment > 91) {
-            programAverage += 5;
+        } else {
+            programmingAverage = 5;
             System.out.println("5 - Программирование");
         }
-        System.out.println("Средний балл оценок по предметам = " + (historyAverage + programAverage) / 2 + ".");
-        System.out.println("средний % по предметам = " + (historyAssessment + programAssessment) / 2 + " %.");
+        System.out.println("Средний балл оценок по предметам = " + (historyAverage + programmingAverage) / 2 + ".");
+        System.out.println("средний % по предметам = " + (historyPercent + programmingPercent) / 2 + " %.");
 
         System.out.println("\n8. Расчет прибыли за год.");
         int rent = 5000;
         int saleGoodsMonth = 13000;
         int costGoods = 9000;
-        int year = 12;
-        int rentYear = rent * year;
-        int saleGoodsYear = saleGoodsMonth * year;
-        int costGoodYear = costGoods * year;
-        int profit = saleGoodsYear - costGoodYear - rentYear;
+        int profit = saleGoodsMonth * 12 - costGoods * 12 - rent * 12;
         if (profit > 0) {
             System.out.println("Прибыль за год: +" + profit + " рублей.");
         } else if (profit < 0) {
@@ -184,7 +173,6 @@ public class IfElseStatementTheme {
                 outBill100 += bill100;
                 outBill10 += (hundred - bill100);
             }
-
         }
 
         if (cash < sum) {
@@ -195,7 +183,6 @@ public class IfElseStatementTheme {
                 cash += ten * 10;
                 outBill10 += ten;
             }
-
         }
 
         if (sum > cash) {
@@ -207,8 +194,8 @@ public class IfElseStatementTheme {
                 System.out.println("Не достаточно купюр для проведения операции.");
             }
 
-            System.out.println("Чтобы снять " + cash + " долларов, потребуется банкнот: " + outBill100 + " номиналом 100$, " +
-                    outBill10 + " номиналом 10$, и " + outBill1 + " банкнот номиналом 1$.");
+            System.out.println("Чтобы снять " + cash + " долларов, потребуется банкнот: " + outBill100 +
+                    " номиналом 100$, " + outBill10 + " номиналом 10$, и " + outBill1 + " банкнот номиналом 1$.");
         }
     }
 }
