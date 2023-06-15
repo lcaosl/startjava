@@ -137,10 +137,8 @@ public class IfElseStatementTheme {
         int profit = (saleGoodsMonth - costGoods - rent) * 12;
         if (profit > 0) {
             System.out.println("Прибыль за год: +" + profit + " рублей.");
-        } else if (profit < 0) {
-            System.out.println("Прибыль за год: " + profit + " рублей.");
         } else {
-            System.out.println("Прибыль за год: 0 рублей.");
+            System.out.println("Прибыль за год: "+ profit + " рублей.");
         }
 
         System.out.println("\n9. Подсчет количества банкнот.");
@@ -190,3 +188,4 @@ public class IfElseStatementTheme {
         }
     }
 }
+
