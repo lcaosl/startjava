@@ -43,25 +43,25 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n3. Проверка числа.");
-        int num = 8;
+        int num = 0;
         if (num != 0) {
-            if (num % 2 == 0) {
-                System.out.println("Число " + num + " четное.");
-            } else {
-                System.out.println("Число " + num + " нечетное.");
+            if (num % 2 == 0 && num > 0) {
+                System.out.println("Число " + num + " четное и положительное.");
+            } else if (num % 2 == 0 && num < 0) {
+                System.out.println("Число " + num + " четное и отрицательное.");
             }
 
-            if (num > 0) {
-                System.out.println("Число " + num + " положительное.");
-            } else {
-                System.out.println("Число " + num + " отрицательное.");
+            if (num % 2 != 0 && num > 0) {
+                System.out.println("Число " + num + "нечетное и положительное.");
+            } else if (num % 2 != 0 && num < 0) {
+                System.out.println("Число " + num + " нечетное и отрицательное.");
             }
         }
-        System.out.print("Исходное число - " + num + ".");
+        System.out.print("Исходное число: " + num + ".");
 
         System.out.println("\n4. Поиск одинаковых цифр в числах.");
-        int num3 = 753;
-        int num4 = 951;
+        int num3 = 777;
+        int num4 = 122;
         int hundreds = num3 / 100;
         int tens = num3 / 10 % 10;
         int ones = num3 % 10;
@@ -74,12 +74,13 @@ public class IfElseStatementTheme {
             System.out.println("В цифрах одинаковых чисел нет.");
         } else if (hundreds == hundreds1) {
             System.out.println("Одинаковые числа: " + hundreds + " из разряда сотен.");
-        }
-        if (tens == tens1) {
-            System.out.println("Одинаковые числа: " + tens + " из разряда десятков.");
-        }
-        if (ones == ones1) {
-            System.out.println("Одинаковые числа: " + ones + " из разряда единиц.");
+
+            if (tens == tens1) {
+                System.out.println("Одинаковые числа: " + tens + " из разряда десятков.");
+            }
+            if (ones == ones1) {
+                System.out.println("Одинаковые числа: " + ones + " из разряда единиц.");
+            }
         }
 
         System.out.println("\n5. Определение символа по его коду.");
@@ -98,7 +99,7 @@ public class IfElseStatementTheme {
 
         if (deposit >= 100000 && deposit <= 300000) {
             finalSum = deposit + deposit * 0.07;
-        } else if(deposit > 300000) {
+        } else if (deposit > 300000) {
             finalSum = deposit + deposit * 0.1;
         }
         System.out.println("Сумма вклада: " + deposit + " руб.");
@@ -107,27 +108,27 @@ public class IfElseStatementTheme {
 
         System.out.println("\n7. Определение оценки по предметам.");
         double historyPercent = 59;
-        double programmingPercent = 91;
-        double historyAverage = 2;
+        double historyGrade = 2;
         if (historyPercent > 60 & historyPercent <= 73) {
-            historyAverage = 3;
+            historyGrade = 3;
         } else if (historyPercent > 73 & historyPercent <= 91) {
-            historyAverage = 4;
+            historyGrade = 4;
         } else if (historyPercent > 91) {
-            historyAverage = 5;
+            historyGrade = 5;
         }
-        System.out.println(historyAverage + " - История");
+        System.out.println(historyGrade + " - История");
 
-        double programmingAverage = 2;
+        double programmingPercent = 91;
+        double programmingGrade = 2;
         if (programmingPercent > 60 & programmingPercent <= 73) {
-            programmingAverage = 3;
+            programmingGrade = 3;
         } else if (programmingPercent > 73 & programmingPercent <= 91) {
-            programmingAverage = 4;
+            programmingGrade = 4;
         } else if (programmingPercent > 91) {
-            programmingAverage = 5;
+            programmingGrade = 5;
         }
-        System.out.println(programmingAverage + " - Программирование");
-        System.out.println("Средний балл оценок по предметам = " + (historyAverage + programmingAverage) / 2 + ".");
+        System.out.println(programmingGrade + " - Программирование");
+        System.out.println("Средний балл оценок по предметам = " + (historyGrade + programmingGrade) / 2 + ".");
         System.out.println("Средний % по предметам = " + (historyPercent + programmingPercent) / 2 + " %.");
 
         System.out.println("\n8. Расчет прибыли за год.");
@@ -138,54 +139,54 @@ public class IfElseStatementTheme {
         if (profit > 0) {
             System.out.println("Прибыль за год: +" + profit + " рублей.");
         } else {
-            System.out.println("Прибыль за год: "+ profit + " рублей.");
+            System.out.println("Прибыль за год: " + profit + " рублей.");
         }
 
         System.out.println("\n9. Подсчет количества банкнот.");
         int sum = 567;
-        int bill100 = 10;
-        int bill10 = 5;
-        int bill1 = 50;
-        int hundred = sum / 100;
-        int ten = sum / 10 % 10;
-        int one = sum % 10;
+        int quantityBill100 = 10;
+        int quantityBill10 = 5;
+        int quantityBill1 = 50;
+        int quantityHundredsInSum = sum / 100;
+        int quantityTensInSum = sum / 10 % 10;
+        int quantityOnesInSum = sum % 10;
+        int maxSumToIssued = quantityBill100 * 100 + quantityBill10 * 10 + quantityBill1;
         int cash = 0;
-        int outBill100 = 0;
-        int outBill10 = 0;
-        int outBill1 = 0;
-        if (sum >= hundred * 100) {
-            if (bill100 >= hundred) {
-                cash = hundred * (bill100 * 100 / 10);
-                outBill100 = hundred;
-            } else if (bill100 < hundred) {
-                cash = bill100 * 100 + (hundred - bill100) * (bill10 / bill10) * 100;
-                outBill100 += bill100;
-                outBill10 += (hundred - bill100);
-            }
-        }
+        int issuedBill100 = 0;
+        int issuedBill10 = 0;
+        int issuedBill1 = 0;
+        if (sum > maxSumToIssued | sum % 100 > quantityBill10 * 10 + quantityBill1 | sum % 10 > quantityOnesInSum) {
+            System.out.println("Не достаточно купюр для проведения операции.");
 
-        if (cash < sum) {
-            if (bill10 <= ten) {
-                cash += bill10 * 10;
-                outBill10 += bill10;
-            } else {
-                cash += ten * 10;
-                outBill10 += ten;
-            }
-        }
-
-        if (sum > cash) {
-            if (bill1 >= sum - cash) {
-                outBill1 += sum - cash;
-                cash += (sum - cash);
-
-            } else if (one > bill1) {
-                System.out.println("Не достаточно купюр для проведения операции.");
+        } else if (sum >= quantityHundredsInSum * 100) {
+            if (quantityBill100 >= quantityHundredsInSum) {
+                cash = quantityHundredsInSum * (quantityBill100 * 100 / 10);
+                issuedBill100 = quantityHundredsInSum;
+            } else if (quantityBill100 < quantityHundredsInSum) {
+                cash = quantityBill100 * 100 + (quantityHundredsInSum - quantityBill100) *
+                        (quantityBill10 / quantityBill10) * 100;
+                issuedBill100 += quantityBill100;
+                issuedBill10 += (quantityHundredsInSum - quantityBill100);
             }
 
-            System.out.println("Чтобы снять " + cash + " долларов, потребуется банкнот: " + outBill100 +
-                    " номиналом 100$, " + outBill10 + " номиналом 10$, и " + outBill1 + " банкнот номиналом 1$.");
+            if (cash < sum) {
+                if (quantityBill10 <= quantityTensInSum) {
+                    cash += quantityBill10 * 10;
+                    issuedBill10 += quantityBill10;
+                } else {
+                    cash += quantityTensInSum * 10;
+                    issuedBill10 += quantityTensInSum;
+                }
+            }
+
+            if (sum > cash) {
+                if (quantityBill1 >= sum - cash) {
+                    issuedBill1 += sum - cash;
+                    cash += (sum - cash);
+                }
+            }
+            System.out.println("Чтобы снять " + cash + " долларов, потребуется банкнот: " + issuedBill100 +
+                    " номиналом 100$, " + issuedBill10 + " номиналом 10$, и " + issuedBill1 + " банкнот номиналом 1$.");
         }
     }
 }
-
